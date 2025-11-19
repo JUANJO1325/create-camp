@@ -1,0 +1,37 @@
+h1 {
+    font-size: 64px;
+    line-height: 134%;
+    font-weight: 400;
+    margin: 113px 0 91px;
+    font-family: "Work Sans", sans-serif;
+}
+
+.container-acerca {
+    padding-bottom: 100px;
+}
+
+.images-acerca {
+    display: flex;
+    gap: 21px;
+    justify-content: center;
+}
+
+.info-container {
+    background-color: white;
+    padding-top: 90px;
+    padding-bottom: 100px;
+}
+
+.info-container h2 {
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 100%;
+}
+
+.info-container p {
+    font-size: 24px;
+    line-height: 125%;
+    font-weight: 300;
+    color: #252422;
+    margin-bottom: 140px;
+}

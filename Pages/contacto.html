@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Styles/contacto.css">
+    <link rel="stylesheet" href="../Styles/global.css">
+    <title>Contacto</title>
+</head>
+
+<body id="contact-body">
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+        <a href="./home.html">
+          <img src="../Public/Images/logo-leo.svg" alt="Logo">
+        </a>
+      </div>
+
+            <nav class="nav-menu">
+                <a href="./acerca-de.html">Acerca de</a>
+                <a href="./reflexiones.html">Reflexiones</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+    <div class="wrap">
+        <section class="contacto-section">
+            <div class="consultas-block">
+                <h2>Consultas</h2>
+                <div class="consultas-grid">
+                    <div class="consulta-item">
+                        <span class="nombre">Bibiana Astrid Correa Ocampo</span>
+                        <a href="mailto:bascorrea@poligran.edu.co" class="email">bascorrea@poligran.edu.co</a>
+                    </div>
+                    <div class="consulta-item">
+                        <span class="nombre">Katherine Franco Chaverra</span>
+                        <a href="mailto:kchaverraf@poligran.edu.co" class="email">kchaverraf@poligran.edu.co</a>
+                    </div>
+                    <div class="consulta-item">
+                        <span class="nombre">Martín Molina Castaño</span>
+                        <a href="mailto:mdamolinac@poligran.edu.co" class="email">mdamolinac@poligran.edu.co</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recomendaciones-block">
+                <h2>Recomendaciones</h2>
+                <form class="recomendaciones-form">
+                    <div class="form-row">
+                        <input type="text" placeholder="Nombre" class="form-input" required>
+                        <input type="text" placeholder="Apellidos" class="form-input" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="email" placeholder="Correo" class="form-input" required>
+                        <input type="tel" placeholder="Teléfono" class="form-input" required>
+                    </div>
+                    <div class="form-full">
+                        <textarea placeholder="¿Qué lugar recomendarías al Semillero de Investigación L.E.O visitar?"
+                            class="form-textarea" rows="5" required></textarea>
+                    </div>
+                    <div class="form-footer">
+                        <button type="submit" class="btn-enviar">
+                            Enviar
+                            <span class="arrow">→</span>
+                        </button>
+                        <p class="disclaimer">Al enviar el formulario aceptas el <a href="#"
+                                class="link-tratamiento">tratamiento de datos</a></p>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mapa interactivo - Cartografías</title>
+
+  <link rel="stylesheet" href="../Styles/home.css">
+  <link rel="stylesheet" href="../Styles/global.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap" rel="stylesheet">
+
+  <script src="../Js/home.js" defer></script>
+  <script src="../Js/loadHeader.js" defer></script>
+  <script src="../Js/InteractiveMap.js" defer></script>
+</head>
+
+
+<body id="home-body">
+
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="./home.html">
+          <img src="../Public/Images/logo-leo.svg" alt="Logo">
+        </a>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="./acerca-de.html">Acerca de</a>
+        <a href="./reflexiones.html">Reflexiones</a>
+        <a href="./contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap main-content">
+    <!-- NIVEL 1: Mapa Principal con todas las comunas -->
+    <div class="map-layout">
+      <aside class="container-left">
+        <div class="buttons-list">
+          <button class="btn btn--popular">Popular</button>
+          <button class="btn btn--santa-cruz">Santa Cruz</button>
+          <button class="btn btn--manrique">Manrique</button>
+          <button class="btn btn--aranjuez">Aranjuez</button>
+          <button class="btn btn--castilla">Castilla</button>
+          <button class="btn btn--doce-oct">Doce de Octubre</button>
+          <button class="btn btn--robledo">Robledo</button>
+          <button class="btn btn--villa-hermosa">Villa Hermosa</button>
+          <button class="btn btn--la-america">La América</button>
+          <button class="btn btn--laureles">Laureles</button>
+          <button class="btn btn--san-javier">San Javier</button>
+          <button class="btn btn--el-poblado">El Poblado</button>
+          <button class="btn btn--guayabal">Guayabal</button>
+          <button class="btn btn--belen">Belén</button>
+          <button class="btn btn--la-candelaria">La Candelaria</button>
+          <button class="btn btn--buenos-aires">Buenos Aires</button>
+        </div>
+      </aside>
+
+      <section class="container-right">
+        <div class="map-container">
+          <img id="popular-1" class="comuna" src="../Public/Images/popular-1.svg" alt="Popular">
+          <img id="manrique-2" class="comuna" src="../Public/Images/manrique-2.svg" alt="Manrique">
+          <img id="villahermosa-3" class="comuna" src="../Public/Images/villahermosa-3.svg" alt="Villa Hermosa">
+          <img id="buenosaires-4" class="comuna" src="../Public/Images/buenosaires-4.svg" alt="Buenos Aires">
+          <img id="elpoblado-5" class="comuna" src="../Public/Images/elpoblado-5.svg" alt="El Poblado">
+          <img id="lacandelaria-6" class="comuna" src="../Public/Images/lacandelaria-6.svg" alt="La Candelaria">
+          <img id="aranjuez-7" class="comuna" src="../Public/Images/aranjuez-7.svg" alt="Aranjuez">
+          <img id="santacruz-8" class="comuna" src="../Public/Images/santacruz-8.svg" alt="Santa Cruz">
+          <img id="castilla-9" class="comuna" src="../Public/Images/castilla-9.svg" alt="Castilla">
+          <img id="doceoctubre-10" class="comuna" src="../Public/Images/docedeoctubre-10.svg" alt="Doce de Octubre">
+          <img id="robledo-11" class="comuna" src="../Public/Images/robledo-11.svg" alt="Robledo">
+          <img id="laureles-12" class="comuna" src="../Public/Images/laureles-12.svg" alt="Laureles">
+          <img id="belen-13" class="comuna" src="../Public/Images/belen-13.svg" alt="Belén">
+          <img id="guayabal-14" class="comuna" src="../Public/Images/guayabal-14.svg" alt="Guayabal">
+          <img id="laamerica-15" class="comuna" src="../Public/Images/laamerica-15.svg" alt="La América">
+          <img id="sanjavier-16" class="comuna" src="../Public/Images/sanjavier-16.svg" alt="San Javier">
+          <p class="ubicacion-1">Santa Elena</p>
+          <p class="ubicacion-2">San Cristobal</p>
+          <p class="ubicacion-3">Altavista</p>
+          <p class="ubicacion-4">Palmitas</p>
+          <p class="ubicacion-5">San Antonio de Prado</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- NIVEL 2: Vista Detallada de Comuna con Puntos de Interés -->
+    <div id="detailed-map-views" style="display: none;">
+      <!-- Vista detallada para cada comuna -->
+      <div id="map-popular-1" class="detailed-map-view">
+        <button class="btn-back-main">← Volver al mapa</button>
+        <div class="detailed-content">
+          <div class="detailed-map-image">
+            <img src="../Public/Images/popular-1.svg" alt="Popular Detallado">
+          </div>
+          <div class="points-list">
+            <div class="point-of-interest" data-point="popular-punto1">
+              <div class="point-marker"></div>
+              <span class="point-label">Los Puentes</span>
+            </div>
+            <div class="point-of-interest" data-point="popular-punto2">
+              <div class="point-marker"></div>
+              <span class="point-label">Santo Domingo</span>
+            </div>
+            <div class="point-of-interest" data-point="popular-punto3">
+              <div class="point-marker"></div>
+              <span class="point-label">Granizal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="map-santacruz-8" class="detailed-map-view">
+        <button class="btn-back-main">← Volver al mapa</button>
+        <div class="detailed-content">
+          <div class="detailed-map-image">
+            <img src="../Public/Images/santacruz-8.svg" alt="Santa Cruz Detallado">
+          </div>
+          <div class="points-list">
+            <div class="point-of-interest" data-point="santacruz-punto1">
+              <div class="point-marker"></div>
+              <span class="point-label">Punto 1</span>
+            </div>
+            <div class="point-of-interest" data-point="santacruz-punto2">
+              <div class="point-marker"></div>
+              <span class="point-label">Punto 2</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Repite este patrón para las demás comunas -->
+      <div id="map-manrique-2" class="detailed-map-view">
+        <button class="btn-back-main">← Volver al mapa</button>
+        <div class="detailed-content">
+          <div class="detailed-map-image">
+            <img src="../Public/Images/manrique-2.svg" alt="Manrique Detallado">
+          </div>
+          <div class="points-list">
+            <div class="point-of-interest" data-point="manrique-punto1">
+              <div class="point-marker"></div>
+              <span class="point-label">Lugar de interés 1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Agrega las demás comunas siguiendo el mismo patrón -->
+
+      <div id="map-aranjuez-7" class="detailed-map-view">
+        <button class="btn-back-main">← Volver al mapa</button>
+        <div class="detailed-content">
+          <div class="detailed-map-image">
+            <img src="../Public/Images/aranjuez-7.svg" alt="Aranjuez Detallado">
+          </div>
+          <div class="points-list">
+            <div class="point-of-interest" data-point="aranjuez-punto1">
+              <div class="point-marker"></div>
+              <span class="point-label">Comfama Aranjuez</span>
+            </div>
+            <div class="point-of-interest" data-point="aranjuez-punto2">
+              <div class="point-marker"></div>
+              <span class="point-label">La puerta rosa</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="map-castilla-9" class="detailed-map-view">
+        <button class="btn-back-main">← Volver al mapa</button>
+        <div class="detailed-content">
+          <div class="detailed-map-image">
+            <img src="../Public/Images/castilla-9.svg" alt="Castilla Detallado">
+          </div>
+          <div class="points-list">
+            <div class="point-of-interest" data-point="castilla-punto1">
+              <div class="point-marker"></div>
+              <span class="point-label">Punto 1</span>
+            </div>
+            <div class="point-of-interest" data-point="castilla-punto2">
+              <div class="point-marker"></div>
+              <span class="point-label">Punto 2</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="map-doceoctubre-10" class="detailed-map-view">
+        <button class="btn-back-main">← Volver al mapa</button>
+        <div class="detailed-content">
+          <div class="detailed-map-image">
+            <img src="../Public/Images/docedeoctubre-10.svg" alt="Doce de Octubre Detallado">
+          </div>
+          <div class="points-list">
+            <div class="point-of-interest" data-point="doceoctubre-punto1">
+              <div class="point-marker"></div>
+              <span class="point-label">Punto 1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="map-robledo-11" class="detailed-map-view">
+        <button class="btn-back-main">← Volver al mapa</button>
+        <div class="detailed-content">
+          <div class="detailed-map-image">
+            <img src="../Public/Images/robledo-11.svg" alt="Robledo Detallado">
+          </div>
+          <div class="points-list">
+            <!-- Aquí están los puntos y niveles ya existentes para Robledo; puedes reemplazar/editar estas entradas -->
+            <div class="point-of-interest" data-point="robledo-punto1">
+              <div class="point-marker"></div>
+              <span class="point-label">Robledo - Punto 1</span>
+            </div>
+            <div class="point-of-interest" data-point="robledo-punto2">
+              <div class="point-marker"></div>
+              <span class="point-label">Robledo - Punto 2</span>
+            </div>
+            <div class="point-of-interest" data-point="robledo-punto3">
+              <div class="point-marker"></div>
+              <span class="point-label">Robledo - Punto 3</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="map-villahermosa-3" class="detailed-map-view">
+        <button class="btn-back-main">← Volver al mapa</button>
+        <div class="detailed-content">
+          <div class="detailed-map-image">
+            <img src="../Public/Images/villahermosa-3.svg" alt="Villa Hermosa Detallado">
+          </div>
+          <div class="points-list">
+            <div class="point-of-interest" data-point="villahermosa-punto1">
+              <div class="point-marker"></div>
+              <span class="point-label">Biblioteca León de Greiff - La Ladera</span>
+            </div>
+            <div class="point-of-interest" data-point="villahermosa-punto2">
+              <div class="point-marker"></div>
+              <span class="point-label">Museo Casa de la Memoria</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="map-laamerica-15" class="detailed-map-view">
+        <button class="btn-back-main">← Volver al mapa</button>
+        <div class="detailed-content">
+          <div class="detailed-map-image">
+            <img src="../Public/Images/laamerica-15.svg" alt="La América Detallado">
+          </div>
+          <div class="points-list">
+            <div class="point-of-interest" data-point="laamerica-punto1">
+              <div class="point-marker"></div>
+              <span class="point-label">Punto 1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="map-laureles-12" class="detailed-map-view">
+        <button class="btn-back-main">← Volver al mapa</button>
+        <div class="detailed-content">
+          <div class="detailed-map-image">
+            <img src="../Public/Images/laureles-12.svg" alt="Laureles Detallado">
+          </div>
+          <div class="points-list">
+            <div class="point-of-interest" data-point="laureles-punto1">
+              <div class="point-marker"></div>
+              <span class="point-label">Punto 1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="map-sanjavier-16" class="detailed-map-view">
+        <button class="btn-back-main">← Volver al mapa</button>
+        <div class="detailed-content">
+          <div class="detailed-map-image">
+            <img src="../Public/Images/sanjavier-16.svg" alt="San Javier Detallado">
+          </div>
+          <div class="points-list">
+            <div class="point-of-interest" data-point="sanjavier-punto1">
+              <div class="point-marker"></div>
+              <span class="point-label">Casa Kolacho</span>
+            </div>
+            <div class="point-of-interest" data-point="sanjavier-punto2">
+              <div class="point-marker"></div>
+              <span class="point-label">Asociación de Mujeres de las Independencias - AMI </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="map-elpoblado-5" class="detailed-map-view">
+        <button class="btn-back-main">← Volver al mapa</button>
+        <div class="detailed-content">
+          <div class="detailed-map-image">
+            <img src="../Public/Images/elpoblado-5.svg" alt="El Poblado Detallado">
+          </div>
+          <div class="points-list">
+            <div class="point-of-interest" data-point="elpoblado-punto1">
+              <div class="point-marker"></div>
+              <span class="point-label">Punto 1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="map-guayabal-14" class="detailed-map-view">
+        <button class="btn-back-main">← Volver al mapa</button>
+        <div class="detailed-content">
+          <div class="detailed-map-image">
+            <img src="../Public/Images/guayabal-14.svg" alt="Guayabal Detallado">
+          </div>
+          <div class="points-list">
+            <div class="point-of-interest" data-point="guayabal-punto1">
+              <div class="point-marker"></div>
+              <span class="point-label">Punto 1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="map-belen-13" class="detailed-map-view">
+        <button class="btn-back-main">← Volver al mapa</button>
+        <div class="detailed-content">
+          <div class="detailed-map-image">
+            <img src="../Public/Images/belen-13.svg" alt="Belén Detallado">
+          </div>
+          <div class="points-list">
+            <div class="point-of-interest" data-point="belen-punto1">
+              <div class="point-marker"></div>
+              <span class="point-label">Punto 1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="map-lacandelaria-6" class="detailed-map-view">
+        <button class="btn-back-main">← Volver al mapa</button>
+        <div class="detailed-content">
+          <div class="detailed-map-image">
+            <img src="../Public/Images/lacandelaria-6.svg" alt="La Candelaria Detallado">
+          </div>
+          <div class="points-list">
+            <div class="point-of-interest" data-point="lacandelaria-punto1">
+              <div class="point-marker"></div>
+              <span class="point-label">Los Puentes</span>
+            </div>
+            <div class="point-of-interest" data-point="lacandelaria-punto2">
+              <div class="point-marker"></div>
+              <span class="point-label">Málaga</span>
+            </div>
+            <div class="point-of-interest" data-point="lacandelaria-punto3">
+              <div class="point-marker"></div>
+              <span class="point-label">Claustro Comfama - Parque de San Ignacio</span>
+            </div>
+            <div class="point-of-interest" data-point="lacandelaria-punto4">
+              <div class="point-marker"></div>
+              <span class="point-label">Parque Bolívar y Catedral Metropolitana</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="map-buenosaires-4" class="detailed-map-view">
+        <button class="btn-back-main">← Volver al mapa</button>
+        <div class="detailed-content">
+          <div class="detailed-map-image">
+            <img src="../Public/Images/buenosaires-4.svg" alt="Buenos Aires Detallado">
+          </div>
+          <div class="points-list">
+            <div class="point-of-interest" data-point="buenosaires-punto1">
+              <div class="point-marker"></div>
+              <span class="point-label">Punto 1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NIVEL 3: Contenido Detallado de Puntos de Interés -->
+    <!-- Los contenidos individuales por punto se encuentran más abajo (unificados).
+         Si prefieres mantenerlos aquí dentro, mueve los bloques con id="content-..." desde
+         la sección "CONTENIDOS DE PUNTOS PARA LAS OTRAS COMUNAS (NIVEL 3)" hacia este contenedor. -->
+  </main>
+
+  <!-- CONTENIDOS DE PUNTOS PARA LAS OTRAS COMUNAS (NIVEL 3) -->
+  <!-- Añade aquí el HTML con id="content-<comuna>-<punto>" para cada punto creado en las vistas detalladas. -->
+  <div id="point-content-views" style="display: none;">
+    <!-- Ejemplos / placeholders para los puntos agregados arriba -->
+    <div id="content-aranjuez-punto1" class="point-content">
+      <button class="btn-back-to-map">← Volver al mapa de la comuna</button>
+      <article class="point-article">
+        <p class="intro-text">Un edificio antiguo cargado de detalles, historias y libros. De manicomio pasó a ser un
+          espacio cultural y de esparcimiento digno del barrio Aranjuez.</p>
+
+        <p class="section-title">Video:</p>
+        <p class="body-text"><a href="https://www.youtube.com/watch?v=ISA-0ymACFw" target="_blank"
+            class="video-link">https://www.youtube.com/watch?v=ISA-0ymACFw</a></p>
+        <div class="gallery-grid">
+          <img src="/Public/Images/comfama-aranjuez.jpg" alt="comfama-aranjuez" class="gallery-item">
+        </div>
+      </article>
+    </div>
+
+    <div id="content-aranjuez-punto2" class="point-content">
+      <button class="btn-back-to-map">← Volver al mapa de la comuna</button>
+      <article class="point-article">
+        <p class="intro-text">Las tradiciones culinarias traídas de otras latitudes encontraron su espacio en la casa de
+          la Puerta Rosa.</p>
+
+        <p class="body-text">PARTICULAR HISTORIA ESTA QUE PASO A RELATAR, PUES todos los que en ella aparecen están
+          muertos, irremediablemente muertos hace muchos años, salvo yo, que he sido preservado en alcohol para contarla
+          (…)</p>
+
+        <p class="body-text">A todos nosotros nos tocó el combo formado, por lo que cuando estuvimos en edad de
+          pertenecer ya existían los pilotos de la esquina y ya tenían un recorrido, así que lo primero era ser acogidos
+          por ellos, que nos aceptaran, nos asistieran y nos patrocinaran.</p>
+
+        <p class="body-text">Fue por entonces que los muchachos más grandes, como mi hermano, mi primo, Clarens, el
+          Calvo y otros, empezaron a juntarse con los pillos y encargarse de guardarles los ferros o hacerles mandados,
+          abriendo el camino para lo que a la postre sería el destino de todos. En una niñez pobre, el lugar donde se
+          nace es de vital importancia, es donde uno fundamenta su existencia, ahí se condensa todo lo que hay de
+          importante en la vida, ahí está la familia, los amores, los amigos y el acómodo vital a los quehaceres
+          cotidianos, que le permiten a uno el desarrollo intelectual y biológico, por eso, para uno que nunca conoció
+          más allá de las fronteras del barrio, que no tuvo viajes ni otros paisajes para comparar, que no percibió el
+          universo como algo abierto e infinito, que no participó de la naturaleza como vórtice espiritual, sino que
+          tuvo en todo 'los ámbitos la cerrazón propia del enclavado en un barrio popular, del encerrarlo en las
+          fronteras invisibles de una ciudad, la cuadra se le transforma en un mundo, en el único e importante mundo que
+          tiene para vivir y crecer, y la calle personal es la verdadera patria, lo primero que crea un sentido real de
+          posesión en la necesidad de pertenencia, que es endógena del ser humano, y la cuadra ofrece el primer impulso
+          de satisfacción, por ella se crea un instinto de afecto que trasciende lo físico.</p>
+
+        <p class="body-text">Por eso los que nacimos en una de estas calles siempre creímos que la nuestra era la mejor
+          y se lo hacíamos saber a todo el que se atreviera a compararnos, por eso en los dúchimes nos esforzábamos para
+          engalanaria y que brillara más que las otras, por eso en los torneos de fútbol hacíamos hasta lo imposible por
+          salir campeones, siempre tratando de demostrarle al barrio que la calle era el mejor vivídero del mundo porque
+          en ella la vida era distinta, y con esta motivación como adalga no fue nadaamen conseguir que todos los
+          habitantes de estas pocas casas que conforman la cuadra gestaran, alimentaran, patrocinaran y soláparan la
+          creación de un combo que tendría fama mundial y le otorgaría el renombre que con tanto ahínco y denuedo había
+          buscado desde siempre, algunos de manera frontal, otros de forma tangencial, pero todos participando, siendo
+          coadyuvantes de una forma de violencia ordinaria y privativa de nuestros barrios, y con la aquiescencia
+          disimulada de todos, la cuadra pasó de ser el sitio soñado de la infancia a una academia de formación de
+          delincuentes. Esta es la historia de esa cuadra y de los muchachos que en ella nacieron, crecieron, amaron,
+          pelearon y murieron, que son los mismos que aparecen en la foto, mis amigos.</p>
+
+        <p class="author-name">Gilmer Mesa</p>
+        <p class="source-cite">La Cuadra (2015)</p>
+        <div class="gallery-grid">
+          <img src="/Public/Images/Puerta-rosa1.jpg" alt="comfama-aranjuez" class="gallery-item">
+          <img src="/Public/Images/Puerta-rosa2.jpg" alt="comfama-aranjuez" class="gallery-item">
+        </div>
+      </article>
+    </div>
+
+    <div id="content-castilla-punto1" class="point-content">
+      <button class="btn-back-to-map">← Volver al mapa de la comuna</button>
+      <article class="point-article">
+        <h2>Punto 1 - Castilla</h2>
+        <p>Descripción para el punto 1 de Castilla.</p>
+      </article>
+    </div>
+
+    <div id="content-castilla-punto2" class="point-content">
+      <button class="btn-back-to-map">← Volver al mapa de la comuna</button>
+      <article class="point-article">
+        <h2>Punto 2 - Castilla</h2>
+        <p>Descripción para el punto 2 de Castilla.</p>
+      </article>
+    </div>
+
+    <div id="content-doceoctubre-punto1" class="point-content">
+      <button class="btn-back-to-map">← Volver al mapa de la comuna</button>
+      <article class="point-article">
+        <h2>Punto 1 - Doce de Octubre</h2>
+        <p>Descripción para Doce de Octubre - punto 1.</p>
+      </article>
+    </div>
+
+    <div id="content-robledo-punto1" class="point-content">
+      <button class="btn-back-to-map">← Volver al mapa de la comuna</button>
+      <article class="point-article">
+        <h2>Robledo - Punto 1</h2>
+        <p>Información y niveles para Robledo - Punto 1. Aquí es donde pegas los datos por punto (texto, imagen, nivel,
+          métricas).</p>
+      </article>
+    </div>
+
+    <div id="content-robledo-punto2" class="point-content">
+      <button class="btn-back-to-map">← Volver al mapa de la comuna</button>
+      <article class="point-article">
+        <h2>Robledo - Punto 2</h2>
+        <p>Información y niveles para Robledo - Punto 2.</p>
+      </article>
+    </div>
+
+    <div id="content-robledo-punto3" class="point-content">
+      <button class="btn-back-to-map">← Volver al mapa de la comuna</button>
+      <article class="point-article">
+        <h2>Robledo - Punto 3</h2>
+        <p>Información y niveles para Robledo - Punto 3.</p>
+      </article>
+    </div>
+
+    <div id="content-villahermosa-punto1" class="point-content">
+      <button class="btn-back-to-map">← Volver al mapa de la comuna</button>
+      <article class="point-article">
+        <p class="intro-text">Una cárcel municipal levantada sobre las laderas de Medellín. Hoy, un lugar con espacios
+          públicos, abiertos a la lectura y a la cultura.</p>
+
+        <p class="body-text">Después de leer todas estas experiencias, imagínate todo el dolor y sufrimiento acechado y
+          que aún queda desvanecido en las cárceles colombianas. No se trata de asuntos del pasado, es algo que aún
+          sucede ya sea en Medellín, Valledupar, Bogotá, Caquetá o cualquier otra ciudad del país. Familias destrozadas,
+          maltratadas, despobladas, desubicadas, con calificativos aberrantes dirigidas a la discriminación de por su
+          color, rudo, mestizo mulato, zambo, saciados y vecinos más vulnerables, que se encuentran enfrentados a un
+          sistema injusto que los arrincona a mantener el dominio sobre los menos favorecidos por la fortuna. También
+          menciona la brecha, que más lejos de violencia tocó fue el disparo que ha generado fallas hace décadas, aunque
+          no haya sido curada y deje consecuencias; las deudas, que obligadas hacia diferentes destinos regionales y
+          nacionales. En ese lugar de tiempo en el concepto de subconsciente ha brotado y me fermenta casi funerario y
+          se queda. Es desgarrador el recorrido que efectué con mi mente. Pienso en todas las regiones del país,
+          trayendo recuerdos, lugares recién visitados o que por distintos, finalmente, vicios otros. Brotación que es
+          como transmutando en generación o digestión, con nuevos colores variados. Esta cárcel no será simplemente
+          olvido generado eternas raíces de corrupción, practicando el dávalo de rechazos, ventas ilegales, devolución
+          entre las familias y las normas desobediencia sociales y familiares alteradas.</p>
+
+        <p class="author-name">Juan Pablo Velásquez</p>
+        <p class="source-cite">Cárcel Municipal La Ladera, Crónicas de la vieja guardia. (2018)</p>
+
+        <p class="section-title">Desde mi orilla</p>
+
+        <p class="poem-text">Para el reo cansado esta salida<br>
+          De vida es despertar en una muda espera<br>
+          Sin ver ni sol, ni siquiera, un pedazo de tierra<br>
+          Que en el silencio va enterrando su locura.</p>
+
+        <p class="poem-text">Esta orilla en mi busca es solo un espejismo<br>
+          Tal mi ver agarra, el ánimo en mí aparece<br>
+          Por mas descuido nada en verdad me florece.</p>
+
+        <p class="poem-text">Ya voy a despertar mi cumo ña, como alla,<br>
+          Y asintotal guardar fichismo de tierra encha,<br>
+          Tomaré mi café e iré por a ventas<br>
+          Mirando hermosos niños pasar hacia la escuela.</p>
+
+        <p class="poem-text">Ya vuelvo a salir y otro amaso no podiera,<br>
+          Ora todos los días, avivirán, los lizeros,<br>
+          Para que uno es humano.</p>
+
+        <p class="poem-text">Lucha contra el olvido, mandon firme tu espera<br>
+          Que haga día un hambre,<br>
+          Quizás logren cambiar los reos.</p>
+
+        <p class="author-name">El viejo Mariluz, poeta.</p>
+        <p class="source-cite">Cárcel Municipal La Ladera, Crónicas de la vieja guarida. (2018)</p>
+
+        <p class="section-title">Museo Casa de la Memoria</p>
+
+        <p class="body-text">Una cuádra en pleno, en memoria, en transformación. En el corazón de Medellín nace y
+          perdura este sitio ligado a las víctimas del conflicto armado. Historias, ideas, experiencias, pensamientos,
+          anuncios y lugares. La miseria y el recorrido de justicia Hoy buscan denunciar, educar, sensibilizar sobre
+          esta historia. Para muchas víctimas en todo su pluralidad, para el desarrollo de procesos pedagógicos para la
+          congruencia del conflicto armado y la guerra y el recuerdo de crímenes de varias formas, asegura el trabajo
+          continuidad con víctimas y sus familiares, que buscan promover cubrientes, territoriales y poblaciones de
+          re-construcción de la memoria colectiva colombiana sobre los hechos ocurridos de activada.</p>
+
+        <p class="body-text">Este museo es un establecimiento del Centro Nacional para o de la Historia y la Verdad, la
+          Convivencia y la No Repetición establecida a partir del Acuerdo de paz larga Medellín del Gobierno Nacional,
+          2017.</p>
+
+        <p class="source-cite">Museo Casa de la Memoria, Centro Nacional de Memoria Histórica, Museo Casa de la
+          Mé...mil, Medellín: Memorias de una Guerra Urbana, Centro Nacional de Memoria Histórica, 2017.</p>
+
+        <p class="section-title">La virtud compone su visión</p>
+
+        <p class="body-text">Este informe es un acto de reconocimiento, pero es también una empresa de historización,
+          porque se Medellín ha llegado sugerir que exígono, a Medellín es la conciencia de la violencia guerrilla,
+          asistente, narcos, milicias, narras, guerrillas, paramilitares y bandas. A continuación es la ciudad del más
+          (...)</p>
+
+        <p class="body-text">Este informe es un acto de reconocimiento, pero es también una empresa de historización,
+          porque se Medellín ha llegado sugerir que exígono, a Medellín es la conciencia de la violencia guerrilla,
+          sicario, narcos, milicias, narras, guerrillas, paramilitares y bandas, a través de sus asegurida geografía de
+          lugares, de memoria y a través de dos acciones metodológicas, porque el Medellín ha llegado sugerir que
+          exígono, a Medellín es la capital del mundo que se han vivido en otras ciudades y se han construido contextos
+          culturales de riesgo. Mediante este trabajo se busca entender las organizaciones de Derechos Humanos y de
+          víctimas de la ciudad, este con las del resto de Antioquia, New Bogotá y todo el país.</p>
+
+        <p class="body-text">En Medellín se puede encontrar el universo completo de las víctimas que clasifican y parte
+          de las otras violencias que ha poblado el país: Componiendo ahora ya es tiempo de develar aquellas verdades,
+          de crear justicia, de reparar estos estilos de vida, pasión heroicas, las desafíos capacitados y las
+          resolviendo discretas que se manifiestan en cada rincón de la ciudad.</p>
+
+        <p class="author-name">Gonzalo Sánchez,</p>
+        <p class="source-cite">Director General, Memorias de una Guerra Urbana, Centro Nacional de Memoria Histórica,
+          2017.</p>
+
+        <div class="gallery-grid">
+          <img src="/Public/Images/point-image-one.jpg" alt="Descripción imagen 1" class="gallery-item">
+          <img src="/Public/Images/point-image-two.jpg" alt="Descripción imagen 2" class="gallery-item">
+          <img src="/Public/Images/point-image-three.jpg" alt="Descripción imagen 3" class="gallery-item">
+          <img src="/Public/Images/point-image-four.jpg" alt="Descripción imagen 4" class="gallery-item">
+          <img src="/Public/Images/point-image-five.jpg" alt="Descripción imagen 5" class="gallery-item">
+          <img src="/Public/Images/point-image-six.jpg" alt="Descripción imagen 6" class="gallery-item">
+        </div>
+      </article>
+
+    </div>
+
+    <div id="content-villahermosa-punto2" class="point-content">
+      <button class="btn-back-to-map">← Volver al mapa de la comuna</button>
+      <article class="point-article">
+        <p class="intro-text">Una ciudad en guerra, en resistencia, en transformación. En el corazón de Medellín nace y
+          perdura este sitio gracias a las víctimas del conflicto armado. Historias, voces, narraciones, denuncias y
+          memoria se le cuentan al mundo desde su interior.</p>
+
+        <p class="body-text">El Museo Casa de la Memoria es un espacio ciudadano para el reconocimiento de las víctimas,
+          en toda su pluralidad, para el desarrollo de procesos pedagógicos para la comprensión del conflicto armado y
+          la guerra y el impulso de procesos de diálogo y reconciliación. Se insta también a que se fortalezca su papel
+          en la valoración y apoyo de procesos comunitarios, territoriales y poblacionales de reconstrucción de la
+          memoria que se vieron adelantando en diferentes lugares de la ciudad. En este sentido, el Museo Casa de la
+          Memoria podrá aportar para que la Comisión para el Esclarecimiento de la Verdad, la Convivencia y la No
+          Repetición establecida a partir del Acuerdo de paz tenga en la ciudad de Medellín uno de sus focos centrales
+          de actividad.</p>
+
+        <p class="source-cite">Recomendaciones para El MCM, en Medellín: Memorias de una Guerra Urbana, Centro Nacional
+          de Memoria Histórica, (2017).</p>
+
+        <p class="body-text">(...) Una combinación de atrocidades convirtieron a Medellín en un símbolo nacional e
+          internacional de la violencia: bombas, sicarios, milicias, narcos, guerrillas, paramilitares y bandas… la
+          convirtieron en la ciudad del mal. (…)</p>
+
+        <p class="body-text">Este informe es un acto de reconocimiento, pero es también una empresa de dignificación;
+          porque si Medellín ha logrado superar ese estigma, si Medellín se ha fortalecido como una ciudad-resistente,
+          lo ha sido a través de sus redes solidarias, a través de su extendida geografía de lugares de memoria y a
+          través de sus acciones institucionales. Pero sobre todo, la ciudad ha logrado superar ese estigma de décadas
+          gracias a la entrega y la pasión de sus víctimas y de sus organizaciones. Sin ellas nunca nos cansaremos de
+          repetirlo-, gracias al tesón de las organizaciones de Derechos Humanos y de víctimas de la ciudad, que junto
+          con las del resto de Antioquia han tenido un papel protagónico a nivel nacional.</p>
+
+        <p class="body-text">En Medellín se puede encontrar el universo completo de las víctimas del conflicto armado y
+          de las otras violencias que ha padecido el país. Comenzamos ahora -y es nuestra deuda con tanta dignidad
+          atropellada-, a reconocer las luchas silenciosas, los gestos heroicos, los desafíos organizativos y las
+          resistencias discretas que se manifiestan en todos los rincones de la ciudad. (…)</p>
+
+        <p class="author-name">Gonzalo Sánchez, Director General,</p>
+        <p class="source-cite">Prólogo, Medellín: Memorias de una Guerra Urbana, Centro Nacional de Memoria Histórica,
+          (2017).</p>
+      </article>
+    </div>
+
+    <div id="content-laamerica-punto1" class="point-content">
+      <button class="btn-back-to-map">← Volver al mapa de la comuna</button>
+      <article class="point-article">
+        <h2>Punto 1 - La América</h2>
+        <p>Contenido editable para La América.</p>
+      </article>
+    </div>
+
+    <div id="content-laureles-punto1" class="point-content">
+      <button class="btn-back-to-map">← Volver al mapa de la comuna</button>
+      <article class="point-article">
+        <h2>Punto 1 - Laureles</h2>
+        <p>Contenido editable para Laureles.</p>
+      </article>
+    </div>
+
+    <div id="content-sanjavier-punto1" class="point-content">
+      <button class="btn-back-to-map">← Volver al mapa de la comuna</button>
+      <article class="point-article">
+        <p class="intro-text">Los jóvenes que cuenta y cantan, y se resisten a olvidar y a callar.</p>
+
+        <p class="body-text"><a href="https://www.youtube.com/watch?v=mlmcztlM0Uo" target="_blank"
+            class="video-link">https://www.youtube.com/watch?v=mlmcztlM0Uo</a></p>
+        <div class="gallery-grid">
+          <img src="/Public/Images/Kolacho1.jpg" alt="Descripción imagen 1" class="gallery-item">
+          <img src="/Public/Images/Kolacho2.jpg" alt="Descripción imagen 2" class="gallery-item">
+
+        </div>
+      </article>
+    </div>
+
+    <div id="content-sanjavier-punto2" class="point-content">
+      <button class="btn-back-to-map">← Volver al mapa de la comuna</button>
+      <article class="point-article">
+        <p class="intro-text">Bajo el turismo desbordado se esconde una sombra. La memoria aún hace eco en medio de las
+          escaleras eléctricas del barrio. Allí hay Mujeres que no olvidan y que nos recuerdan las tragedias y
+          resistencias de esta ciudad.</p>
+
+        <p class="body-text">"Un dios armado de fuego ha embestido a la ciudad" Sófocles.</p>
+
+        <p class="body-text">Es la media noche. Mil quinientos hombres se movilizan. Han salido de la cuarta Brigada y
+          las estaciones de la policía Metropolitana. Ahora atraviesan otrabanda y ascienden por la calle San Juan. Van
+          en camiones, carros, motocicletas y tanquetas. El silencio, ante los motores, se escabulle por entre las ramas
+          de los árboles, los aleros de las casas, las alcantarillas envueltas en sus alientos de podre. Los vehículos
+          se parquean arriba de la iglesia de la América. Allí, inclinados sobre mapas y alumbrados con linternas, los
+          altos mandos dan las últimas indicaciones. El grueso de los informados debe continuar a pie hasta que se
+          controlen los primeros barrios. No han comido nada desde hace horas. No han fumado ni bebido, y en murmullos,
+          en silencio o con jaculatorias intermitentes, se encomiendan a María Auxiliadora y a la Virgen del Carmen.
+          (p.13)</p>
+
+        <p class="body-text">El diablo ordena a sus hombres que pongan las bayonetas en las bocas de los fusiles.
+          Ultiman con ellos a los milicianos compañeros con los que se topan en el camino (…) los hieren en el abdomen,
+          las piernas y brazos. Les prometen la vida si les confiesan el paradero de sus compañeros, pero cuando
+          constatan la información, los rematan con los cañones afilados</p>
+
+        <p class="author-name">Pablo Montoya</p>
+        <p class="source-cite">La Sombra de Orión (2021)</p>
+        <div class="gallery-grid">
+          <img src="/Public/Images/asociacion1.jpg" alt="Descripción imagen 1" class="gallery-item">
+          <img src="/Public/Images/asociacion2.jpg" alt="Descripción imagen 2" class="gallery-item">
+          <img src="/Public/Images/asociacion3.jpg" alt="Descripción imagen 2" class="gallery-item">
+          <img src="/Public/Images/asociacion4.jpg" alt="Descripción imagen 2" class="gallery-item">
+        </div>
+      </article>
+    </div>
+
+    <div id="content-elpoblado-punto1" class="point-content">
+      <button class="btn-back-to-map">← Volver al mapa de la comuna</button>
+      <article class="point-article">
+        <h2>Punto 1 - El Poblado</h2>
+        <p>Contenido editable para El Poblado.</p>
+      </article>
+    </div>
+
+    <div id="content-guayabal-punto1" class="point-content">
+      <button class="btn-back-to-map">← Volver al mapa de la comuna</button>
+      <article class="point-article">
+        <h2>Punto 1 - Guayabal</h2>
+        <p>Contenido editable para Guayabal.</p>
+      </article>
+    </div>
+
+    <div id="content-belen-punto1" class="point-content">
+      <button class="btn-back-to-map">← Volver al mapa de la comuna</button>
+      <article class="point-article">
+        <h2>Punto 1 - Belén</h2>
+        <p>Contenido editable para Belén.</p>
+      </article>
+    </div>
+
+    <div id="content-lacandelaria-punto1" class="point-content">
+      <button class="btn-back-to-map">← Volver al mapa de la comuna</button>
+      <article class="point-article">
+        <p class="intro-text">Lugar de comercio, de la baratija, del rebusque y el agáchese. Aquí está la Medellín
+          comercial informal.</p>
+
+        <p class="section-title">Un mercado de las pulgas paisa</p>
+
+        <p class="body-text">(…)</p>
+
+        <p class="body-text">Alguien que llegue a Medellín y no conozca nuestro alucinado folklore urbano, y pase
+          desprevenido por esta esquina, seguramente no se dará cuenta de la cantidad de negocios raros que se cocinan
+          dentro de ese tumulto de hombres que allí se paran, aparentemente alrededor de nada. Pero no es sino
+          adentrarse y mirar la mercadería que allí se ofrece para ver de frente nuestra realidad económica, la otra
+          cara de nuestro capitalismo minusválido.</p>
+
+        <p class="body-text">A veces se consigue a precio de ganga verdaderas joyas, bien habidas o robadas, porque allí
+          no importa la procedencia de la mercancía. Algunos manejan su propio plante y compran para revender, ya sea a
+          alguien que pasa por allí ofreciendo algo que ya no usa o lo consiguen por saldos en Guayaquil, donde una
+          funciona una especie de central mayorista del segundazo, que congrega a los recicladores de toda la ciudad.
+          Otros trabajan por cuenta del que tiene el plante, y no son pocos los que van a vender objetos de su hogar,
+          como último recurso para no morirse de hambre. También están los jubilados y desempleados que se paran allí a
+          ofrecer una mina de lapisero usado o cualquier otra chuchería sin valor, tal vez como una forma encubierta de
+          no perder el tiempo. Y hay quienes llegan a comprar mercancía barata para vender más cara en los pueblos.</p>
+
+        <p class="body-text">Y llega, por supuesto, el raponero que acaba de robuin un reloj y lo vende allí, sin afán,
+          por lo que paguen. Y detrás de él llegan también los policías. A quien sorprendan con más de cuatro relojes o
+          cadenas lo detienen en calidad de sospechoso. Pero según Ricardo, uno de los tantos habituales del lugar, los
+          policías también llegan al rebusque. Dice que prefiere pagar un carcelazo a entregarles su mercancía, porque
+          se la roban.</p>
+
+        <p class="body-text">Como también huye parte de la droga,nadie lícita comercial del lugar ni de un control. Y se
+          pueda vender hasta cinco veces en el transcurso del día, a intermediarios distintos, según van llegando allí.
+          De modo que cuando llega la noche el objeto está más caro, pero no ha podido salir de esa esquina. O sea que
+          es un mercado ilusorio que se alimenta a sí mismo.</p>
+
+        <p class="author-name">Ricardo Aricapa</p>
+        <p class="source-cite">Medellín es Así (2022)</p>
+    </div>
+
+    <div id="content-lacandelaria-punto2" class="point-content">
+      <button class="btn-back-to-map">← Volver al mapa de la comuna</button>
+      <article class="point-article">
+        <p class="intro-text">Lugar de la música, el baile, la fiesta y los vicios que se conjuran. Aquí está la
+          Medellín nocturna y sus adicciones.</p>
+
+        <p class="section-title">Una conjura de los vicios paisa</p>
+
+        <p class="body-text">(…)</p>
+
+        <p class="body-text">Alguien que llegue a Medellín y no conozca nuestro alucinado folklore urbano, y pase
+          desprevenido por estos antros, seguramente no se dará cuenta de la cantidad de desvaríos que se cocinan dentro
+          de ese tumulto de personas que allí se reúnen, aparentemente alrededor de nada. Pero no es sino adentrarse y
+          observar los vicios que allí se ofrecen para ver de frente nuestra realidad social, la otra cara de nuestro
+          moralismo hipócrita.</p>
+
+        <p class="body-text">A veces se consiguen experiencias intensas, bien habidas o prohibidas, porque allí no
+          importa la procedencia del estímulo. Algunos manejan su propio plante y consumen para evadirse, ya sea alguien
+          que pasa por allí ofreciendo algo que ya no necesita o lo consiguen por contactos en barrios bravos, donde
+          funciona una especie de central mayorista del vicio, que congrega a los desparchados de toda la ciudad. Otros
+          trabajan por cuenta del que tiene el plante, y no son pocos los que van a buscar olvido, como último recurso
+          para no morirse de aburrimiento. También están los veteranos y desempleados que se paran allí a ofrecer una
+          mina de sabiduría callejera o cualquier otra historia sin valor, tal vez como una forma encubierta de no
+          sentirse solos. Y hay quienes llegan a vender sueños baratos para comprar realidad cara en otras partes.</p>
+
+        <p class="body-text">Y llega, por supuesto, el adicto que acaba de meterse un arreglaje con leche y mazamorra y
+          lo disfruta allí, sin afán, por lo que dure. Y detrás de él llegan también los moralistas. A quien sorprendan
+          con más de cuatro groserías o blasfemias lo señalan en calidad de vicioso. Pero según el tío Anzízar, uno de
+          los tantos habituales del lugar, los moralistas también llegan al rebusque. Dice que prefiere pagar un
+          rezadera a entregarles su dignidad, porque se la roban.</p>
+
+        <p class="body-text">Como también huye parte de la decencia, nadie controla el lugar ni su comercio ilícito. Y
+          se pueda consumir hasta cinco veces en el transcurso de la noche, en estados distintos, según van llegando
+          allí. De modo que cuando llega el amanecer el alma está más pesada, pero no ha podido salir de ese antro. O
+          sea que es un vicio ilusorio que se alimenta a sí mismo.</p>
+
+        <p class="author-name">David Betancourt</p>
+        <p class="source-cite">Gonorrea (cuento) - La Conjura de los Vicios (2020)</p>
+        <div class="gallery-grid">
+          <img src="/Public/Images/malaga1.jpg" alt="Descripción imagen 1" class="gallery-item">
+          <img src="/Public/Images/malaga2.jpg" alt="Descripción imagen 2" class="gallery-item">
+          <img src="/Public/Images/malaga3.jpg" alt="Descripción imagen 2" class="gallery-item">
+          <img src="/Public/Images/malaga4.jpg" alt="Descripción imagen 2" class="gallery-item">
+        </div>
+      </article>
+    </div>
+
+    <div id="content-lacandelaria-punto3" class="point-content">
+      <button class="btn-back-to-map">← Volver al mapa de la comuna</button>
+      <article class="point-article">
+        <p class="intro-text">La historia por donde todos pasan, en el lugar que alberga secretos y relatos en cada uno
+          de sus rincones.</p>
+
+        <p class="section-title">San Ignacio</p>
+        <p class="body-text"><a href="https://www.youtube.com/watch?v=1HqqNBs6d2E&ab_channel=linaTMoreno"
+            target="_blank" class="video-link">https://www.youtube.com/watch?v=1HqqNBs6d2E&ab_channel=linaTMoreno</a>
+        </p>
+      </article>
+    </div>
+
+    <div id="content-lacandelaria-punto4" class="point-content">
+      <button class="btn-back-to-map">← Volver al mapa de la comuna</button>
+      <article class="point-article">
+
+        <p class="intro-text">De puro ladrillo rojo se levanta una imponente Catedral. La figura de Bolivar le hace
+          compañía en un parque en el que todos son bienvenidos.</p>
+
+        <p class="section-title">La diva de la Catedral</p>
+
+        <p class="body-text">Es domingo, domingo en la noche. Dos monaguillos cierran las puertas de la Catedral
+          Metropolitana. Hace poco terminó la misa de siete y muchos de los que estaban en la iglesia ocupan un lugar en
+          las escalas del atrio, esperan el espectáculo de la Dani (...) El vestido negro va y viene entre sus piernas,
+          los vuelos de la tela son amplios, móviles y acentúan su cintura. La falda no cubre sus rodillas. Luce tacones
+          altos. Sus piernas son bien torneadas y están brillantes (...) es como una niña que minutos antes tomó el
+          vestido de fiesta y los zapatos de su madre para jugar un rato a ser mujer. Ríe sin recato, los vuelos de la
+          falda se sacuden. Le guiña el ojo a un muchacho que encuentra en el camino.</p>
+
+        <p class="body-text">Dos costales aparecen en el atrio de la iglesia como por arte de magia. El público se se
+          acerca, los espacios en las escalas se cierran y Dani abre los costales como si tratara del baúl de sus
+          juguetes. Asistimos a un ritual que parece realizarse en la penumbra de un cuarto infantil o en la buhardilla
+          de una casa vieja.</p>
+
+        <p class="author-name">Luz Ofelia Jaramillo</p>
+        <p class="source-cite">La diva de la Catedral - Ellas escriben en Medellín (2007)</p>
+
+        <p class="media-cite">Canción: Helenita Vargas (El Varón)<br>Vídeo: La Diva (centro)</p>
+        <p class="body-text"><a
+            href="https://poligran-my.sharepoint.com/personal/kchaverraf_poligran_edu_co/_layouts/15/stream.aspx?id=%2Fpersonal%2Fkchaverraf%5Fpoligran%5Fedu%5Fco%2FDocuments%2FCREATE%20CAMPS%202025%2D1%2FSemillero%20L%2EE%2EO%2FMAPA%20INTERACTIVO%2FSEMILLERO%20L%2EE%2EO%2DCREACIONES%20Y%20REGISTRO%20FOTO%2FCREACIONES%2FVIDEOS%2FDaniel%2DRuta2%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E8115cfdc%2D293a%2D4d50%2D9bbb%2Df39f07e91776"
+            target="_blank"
+            class="video-link">https://poligran-my.sharepoint.com/personal/kchaverraf_poligran_edu_co/</a>
+        </p>
+        <div class="gallery-grid">
+          <img src="/Public/Images/bolivar1.jpg" alt="Descripción imagen 1" class="gallery-item">
+          <img src="/Public/Images/bolivar2.jpg" alt="Descripción imagen 2" class="gallery-item">
+          <img src="/Public/Images/bolivar3.jpg" alt="Descripción imagen 2" class="gallery-item">
+          <img src="/Public/Images/bolivar4.jpg" alt="Descripción imagen 2" class="gallery-item">
+          <img src="/Public/Images/bolivar5.jpg" alt="Descripción imagen 2" class="gallery-item">
+        </div>
+      </article>
+    </div>
+
+    <div id="content-buenosaires-punto1" class="point-content">
+      <button class="btn-back-to-map">← Volver al mapa de la comuna</button>
+      <article class="point-article">
+        <h2>Punto 1 - Buenos Aires</h2>
+        <p>Contenido editable para Buenos Aires.</p>
+      </article>
+    </div>
+  </div>
+
+  <div class="aviso-seleccion">
+    <img src="../Public/Images/Polygon 1 (1).png" alt="">
+    <p class="aviso-texto">Selecciona una comuna<br>de Medellín para ver sus cartografías</p>
+  </div>
+
+</body>
+
+</html>

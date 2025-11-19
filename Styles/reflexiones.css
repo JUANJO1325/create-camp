@@ -1,0 +1,73 @@
+.page-title {
+    font-size: 40px;
+    font-weight: 400;
+    margin: 50px 0;
+}
+
+
+
+.accordion-item {
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    cursor: pointer;
+}
+
+.accordion-header h2 {
+    margin: 0;
+    font-size: 86px;
+    /* Para que coincida con el tamaño de las imágenes */
+    font-weight: 700;
+}
+
+/* Estilo del icono (+) */
+.accordion-icon {
+    font-size: 2.5em;
+    font-weight: 300;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+
+/* --- Lógica de Apertura/Cierre (CSS PURE) --- */
+
+/* 1. Contenido Oculto por defecto */
+.accordion-content {
+    /* Fondo blanco para el contenido */
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+
+.accordion-content p {
+    padding: 10px 0;
+}
+
+/* 2. Cuando el checkbox está marcado, expande el contenido */
+.accordion-toggle:checked~.accordion-content {
+    max-height: 1000px;
+    /* Un valor grande que siempre exceda el contenido */
+    padding: 20px 25px;
+}
+
+/* 3. Cuando el checkbox está marcado, cambia el icono de '+' a '-' */
+.accordion-toggle:checked~.accordion-header .accordion-icon {
+    transform: rotate(45deg);
+    /* Rotar el '+' 45 grados para simular un 'x' o '-' */
+}
+
+/* 4. Estilo para el contenido de texto dentro del acordeón (se basa en tu imagen) */
+.accordion-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333;
+}
