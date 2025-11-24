@@ -4,7 +4,7 @@
     width: calc(100% - 40px);
 }
 
-*{
+* {
     font-family: "Work Sans", sans-serif;
 }
 
@@ -60,4 +60,10 @@ body {
 
 .nav-menu a:hover {
     color: #000;
+}
+
+footer {
+    background-color: #0F385B;
+    text-align: center;
+    padding: 40px 0;
 }
